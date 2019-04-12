@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Control de Firmas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/flat-ui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" href="img/controlfirm.png" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+          </ul>
+        </div>
+    </nav>
+
+    <div class="container" style="max-width:400px;" id ="contenedorFom"><!--div del formulario  -->
+    <br>
+      <center>  <a href=""><img class="img-responsive" src="img/controlfirm.png" alt="Logo controlfirm" width="150" height="120"> </img></a></center>
+        <center><font class="text-info" size="4">Iniciar Sesión </font></center>
+      <div class="login-form" >
+        <form id="login" >
+            <div class="form-group" >
+              <label  for="login-nombre">Usuario</label>
+              <input type="email" class="form-control login-field" value=""  id="login-nombre" required autofocus/>
+            </div>
+
+            <div class="form-group">
+              <label  for="login-clave"> Contrase&#241;a</label>
+              <input type="password" class="form-control login-field" value=""  id="login-clave" required />
+            </div>
+            <input type="submit" class="btn text-white bg-info btn-lg btn-block" value="Iniciar Sesión"> </input>
+            <br>
+
+        </form>
+      </div>
+      <br>
+    </div>
+    <br>
+    <footer class="text-white bg-info">
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">Copyright© Ing. Juan José Sarabia caffroni
+      </div>
+    </footer>
+
+      <!-- Conexion con Jquery -->
+    <script src="js/jquery.min.js"> </script>
+    <script src="js/jquery.js"> </script>
+    <!-- Conexion con Bootstrap -->
+    <script src="js/bootstrap.min.js"> </script>
+    <script src="js/flat-ui.min.js"></script>
+    <script src="js/video.js"></script>
+    <!-- Conexion con funciones creadas en el JavaScript -->
+    <script src="js/controlador.js"></script>
+
+
+  </body>
+</html>

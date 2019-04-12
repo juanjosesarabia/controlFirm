@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Control de Firmas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/flat-ui.min.css" >
+    <link rel="stylesheet" href="../css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../css/estilo.css"> <!-- -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../img/controlfirm.png" />
+    </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="inicio.html">
+         <img src="../img/controlfirm.png" width="80" height="50" class="d-inline-block align-top" alt="">
+     </a>
+
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button><!-- esta parte es para menu responsive-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto text-center">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Gestionar Gerentes
+              </a>
+              <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="consultarE.html">Mostrar Gerentes</a>
+                <a class="dropdown-item" href="modificarE.html">Modificar Gerente</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Gestionar Firmas
+            </a>
+            <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="consultarD.html">Mostrar Firmas</a>
+              <a class="dropdown-item" href="modificarD.html">Modificar Firma</a>
+            </div>
+          </li>
+        </ul>
+        <div class="">
+          <a type="btn" href="../index.html" class="btn btn-info btn-sm btn-block"> Cerrar Sesi&#243;n </a>
+        </div>
+        </div>
+    </nav><!-- terminacion del menu -->
+
+
+<div class="container"><!-- Inicio div contenedor-->
+    <div class="panel" ><!--  Empieza toda la info de la resolucion o Circular         --->
+      <p id="tituloPanel">CONTROL DE FIRMAS  </p>
+      <div class="contenidoPanel "><!--  Contenido del panel         ---><br>
+          <div class="row ">
+            <div class="col-6">   <!--inicio de div primera columna-->
+                <label for="municipio" id="munici">Municipio: </label>
+                      <select id="municipio" class="custom-select"><!--  Select pata escoger municipio --->
+                        <option selected>Seleccione un Municipio</option>
+                        <option value="0">ACH&#205;</option>
+                        <option value="1">ALTOS DEL ROSARIO</option>
+                        <option value="2">ARENAL</option>
+                        <option value="3">ARJONA</option>
+                        <option value="4">ARROYOHONDO</option>
+                        <option value="5">BARRANCO DE LOBA</option>
+                        <option value="6">CALAMAR</option>
+                        <option value="7">CANTAGALLO</option>
+                        <option value="8">CICUCO</option>
+                        <option value="9">C&#211;RDOBA</option>
+                        <option value="10">CLEMENCIA</option>
+                        <option value="11">EL CARMEN DE BOL&#205;VAR</option>
+                        <option value="12">EL GUAMO</option>
+                        <option value="13">EL PE&#209;&#211;N</option>
+                        <option value="14">HATILLO DE LOBA</option>
+                        <option value="15">MAGANGU&#201;</option>
+                        <option value="16">MAHATES</option>
+                        <option value="17">MARGARITA</option>
+                        <option value="18">MAR&#205;A LA BAJA</option>
+                        <option value="19">MONTECRISTO</option>
+                        <option value="20">MOMP&#211;S</option>
+                        <option value="21">MORALES</option>
+                        <option value="22">NOROS&#205;</option>
+                        <option value="23">PINILLOS</option>
+                        <option value="24">REGIDOR</option>
+                        <option value="25">R&#205;O VIEJO</option>
+                        <option value="26">SAN CRIST&#211;BAL</option>
+                        <option value="27">SAN ESTANISLAO</option>
+                        <option value="28">SAN FERNANDO</option>
+                        <option value="29">SAN JACINTO</option>
+                        <option value="30">SAN JACINTO DEL CAUCA</option>
+                        <option value="31">SAN JUAN NEPOMUCENO</option>
+                        <option value="32">SAN MART&#205;N DE LOBA</option>
+                        <option value="33">SAN PABLO</option>
+                        <option value="34">SANTA CATALINA</option>
+                        <option value="35">SANTA ROSA</option>
+                        <option value="36">SANTA ROSA DEL SUR</option>
+                        <option value="37">SIMIT&#205;</option>
+                        <option value="38">SOPLAVIENTO</option>
+                        <option value="39">TALAIGUA NUEVO</option>
+                        <option value="40">TIQUISIO</option>
+                        <option value="41">TURBACO</option>
+                        <option value="42">TURBANA</option>
+                        <option value="43">VILLANUEVA</option>
+                        <option value="44">ZAMBRANO</option>
+                      </select>
+            </div><!--terminacion de div primera columna-->
+
+          <div class="col-6">   <!--inicio de div segunda columna-->
+              <label for="zode" id="zod">o Zode: </label>
+              <select id="zode" class="custom-select">
+                <option selected>Seleccione un ZODES</option>
+                <option >ZODES NORTE BOLIVARENSE</option>
+                <option >ZODES DIQUE BOLIVARENSE</option>
+                <option >ZODES MONTES DE MAR&#205;A BOLIVARENSE</option>
+                <option >ZODES MOJANA BOLIVARENSE</option>
+                <option >ZODES ISLA DE MOMPOX BOLIVARENSE</option>
+                <option >ZODES LOBAS BOLIVARENSE</option>
+                <option >ZODES MAGDALENA MEDIO BOLIVARENSE</option>
+                  </select>
+              </div><!--terminacion de div segunda columna-->
+          </div><!--terminacion de div class row-->
+
+
+         <br><br><br><br>
+
+        <div id="divMayor">
+        <div class="divTabla"><!-- Tablas de datos  --->
+          <h2 id ="tituloTabla">Datos</h2><br>
+            <table>
+              <tr>
+                <th class= "tabla3">Zodes</th>
+              <th class= "tabla2">Municipio</th>
+              <th class= "tabla1"> Instituci&#243n; </th>
+              <th class= "tabla">Nombre Gerente</th>
+              <th class= "tabla">Teléfono</th>
+              <th class= "tabla">Fecha Inicial</th>
+              <th class= "tabla">Fecha Final</th>
+              <th class= "tabla">Informaci&#243n; </th>
+              </tr>
+
+            <tbody>
+
+
+
+
+            </tbody>
+            </table>
+
+        </div><!-- terminacion Tablas de datos  --->
+        </div><!-- terminacion div raro  --->
+      </div><!--  terminacion contenido panel --->
+    </div>
+
+
+</div><!--  terminacion div container --->
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+       <br><br><br>
+       <footer class="text-white bg-info">
+         <!-- Copyright -->
+         <div class="footer-copyright text-center py-3">Copyright© Ing. Juan José Sarabia caffroni
+         </div>
+       </footer>
+
+
+
+
+       <!-- Conexion con Jquery -->
+     <script src="../js/jquery.min.js"> </script>
+     <script src="../js/jquery.js"> </script>
+     <!-- Conexion con Bootstrap -->
+     <script src="../js/bootstrap.min.js"> </script>
+     <script src="../js/flat-ui.min.js"></script>
+
+     <script src="../js/video.js"></script>
+     <!-- Conexion con funciones creadas en el JavaScript -->
+     <script src="../js/controlador.js"></script>
+
+
+
+
+  </body>
+</html>

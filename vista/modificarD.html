@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Prueba T&#233;cnica  NativApps</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href="../css/flat-ui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilo.css">
+  </head>
+
+  <body onload="limpiarCamposDocente()">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <a class="navbar-brand" href="">Prueba Técnica</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Gestionar Estudiantes
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="registrarE.html">Registrar Estudiantes</a>
+                <a class="dropdown-item" href="consultarE.html">Mostrar Estudiantes</a>
+                <a class="dropdown-item" href="modificarE.html">Modificar Estudiantes</a>
+                <a class="dropdown-item" href="eliminarE.html">Eliminar Estudiantes</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Gestionar Docentes
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="registrarD.html">Registrar Docentes</a>
+              <a class="dropdown-item" href="consultarD.html">Mostrar Docentes</a>
+              <a class="dropdown-item" href="modificarD.html">Modificar Docentes</a>
+              <a class="dropdown-item" href="eliminarD.html">Eliminar Docentes</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Gestionar Cursos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="registrarC.html">Registrar Cursos</a>
+            <a class="dropdown-item" href="consultarC.html">Mostrar Cursos</a>
+            <a class="dropdown-item" href="modificarC.html">Modificar Cursos</a>
+            <a class="dropdown-item" href="eliminarC.html">Eliminar Cursos</a>
+          </div>
+        </li>
+           <a type="btn" href="../index.html" class="btn btn-success btn-lg btn-block"> Cerrar Sesi&#243;n </a>
+          </ul>
+
+        </div>
+</nav>
+      
+    <div class="container" style="max-width:500px;" id ="contenedorFom">
+
+				<br>
+
+			<div class="login-form" >
+          <center><font class="text-success" size="6">Modificar Docente </font></center>
+         <br>
+        <form id="modificarDocente" >
+          <div class="form-group"><!--boton de busqueda-->
+            <label for="idoc">Identificación</label>
+           <input id="iddoc"  ></input>
+          <a type="btn" onclick="buscarDocente()" class="btn btn-success btn-lg">Buscar Docente</a>
+          </div>
+
+             <hr align="left"  size="2" width="100%" style="color: #f2f2f2;"></hr>
+            <center><h5>Datos a Modificar</h5></center>
+            <div class="form-group" >
+              <label for="identificacion"> Identificación</label>
+              <input maxlength="40" type="text" class="form-control login-field" value=""  id="identificacion" />
+
+            </div>
+
+            <div class="form-group" >
+              <label for="nombres"> Nombres</label>
+              <input maxlength="40" type="text" class="form-control login-field" value=""  id="nombres" />
+
+            </div>
+
+            <div class="form-group" >
+              <label for="apellidos"> Apellidos</label>
+              <input maxlength="40" type="text" class="form-control login-field" value=""  id="apellidos" />
+
+            </div>
+
+            <div class="form-group" >
+              <label for="genero"> Género</label>
+              <input maxlength="40" type="text" class="form-control login-field" value="" id="genero" />
+
+            </div>
+
+            <div class="form-group">
+                  <input type="submit" class="btn btn-success btn-lg" value="Modificar Datos"> </input>
+                  <a type="btn" href="inicio.html" class="btn btn-success btn-lg" style="width:50%" > Regresar al al men&#250;</a>
+      			</div>
+
+        </form>
+      </div>
+
+
+			<br>
+			<br>
+
+
+
+
+
+    </div>
+
+
+
+
+    <br><br><br><br>
+    <footer class="text-white bg-success">
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">Autor: Ing. Juan José Sarabia caffroni
+      </div>
+    </footer>
+
+
+
+    <!-- Conexion con Jquery -->
+  <script src="../js/jquery.min.js"> </script>
+  <script src="../js/jquery.js"> </script>
+  <!-- Conexion con Bootstrap -->
+  <script src="../js/bootstrap.min.js"> </script>
+  <script src="../js/flat-ui.min.js"></script>
+  <!-- Conexion con funciones creadas en el JavaScript -->
+  <script src="../js/controlador.js"></script>
+
+  </body>
+</html>
