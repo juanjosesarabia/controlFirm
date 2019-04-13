@@ -17,27 +17,20 @@ body{/* propiedades del body */
 	font-weight: bold;
 	border-radius: 12px 12px 0px 0px;
 	color: white;
-	
+	padding-bottom: 0;
+	margin-bottom: 0;
 }
-
-.panel{
-	float: right;
-	border-radius: 12px 12px 0px 0px;
-  transform: translate(-3%);
-}
-
 .contenidoPanel{
-	padding-top: 0;
  border: 0.5px solid #003cb3;
 }
 
  #municipio, #zode{/*  los select */
 	border: 0.5px solid #003cb3;
-	width: 25%;
+	max-width: 60%;
 }
 #zod, #munici{ /*label*/
 	padding-left: 5%;
-	width: 34%;
+  width: 25%;
 }
 
 #tituloTabla{
@@ -76,7 +69,6 @@ body{/* propiedades del body */
   background-color: #e6e6e6;
   width: 15%;
 }
-
 #divMayor{
 transform: translate(2.7%);
 }
