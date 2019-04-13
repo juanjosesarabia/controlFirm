@@ -8,10 +8,12 @@ body{/* propiedades del body */
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);/* sombra del form */
 }
 
-
+.panel{
+	padding-left: 3%;
+	padding-right: 3%;
+}
 /* Desde aqui empieza estilo del panel y tabla*/
 #tituloPanel{
-	background-color: #003cb3;
 	text-align: center;
 	font-size: 30px;
 	font-weight: bold;
@@ -21,11 +23,11 @@ body{/* propiedades del body */
 	margin-bottom: 0;
 }
 .contenidoPanel{
- border: 0.5px solid #003cb3;
+ border: 0.5px solid #5bc0de;
 }
 
  #municipio, #zode{/*  los select */
-	border: 0.5px solid #003cb3;
+	border: 0.5px solid #5bc0de;
 	max-width: 60%;
 }
 #zod, #munici{ /*label*/
@@ -34,7 +36,6 @@ body{/* propiedades del body */
 }
 
 #tituloTabla{
-	background-color: #003cb3;
 	text-align: center;
 	font-size: 20px;
 	font-weight: bold;
@@ -45,30 +46,12 @@ body{/* propiedades del body */
 }
 
 .divTabla{
-	border: 0.5px solid #003cb3;
+	border: 0.5px solid #5bc0de;
 	width: 95%;
 	border-radius: 14px 14px 0px 0px;
    	 position: center;
 }
 
-.tabla{
-  background-color: #e6e6e6;
-  padding:0.4em;
-  border: 0.5px solid #e6e6e6;
-
-}
-.tabla1{
-  background-color: #e6e6e6;
-  width: 30%;
-}
-.tabla2{
-  background-color: #e6e6e6;
-  width: 15%;
-}
-.tabla3{
-  background-color: #e6e6e6;
-  width: 15%;
-}
 #divMayor{
 transform: translate(2.7%);
 }

@@ -51,9 +51,9 @@
     </nav><!-- terminacion del menu -->
 
 
-<div class="container"><!-- Inicio div contenedor-->
+
     <div class="panel" ><!--  Empieza toda la info de la resolucion o Circular         --->
-      <p id="tituloPanel">CONTROL DE FIRMAS  </p>
+      <p id="tituloPanel" class="bg-info">CONTROL DE FIRMAS  </p>
       <div class="contenidoPanel "><!--  Contenido del panel         ---><br>
           <div class="row ">
             <div class="col-6">   <!--inicio de div primera columna-->
@@ -112,13 +112,13 @@
               <label for="zode" id="zod">o Zode: </label>
               <select id="zode" class="custom-select">
                 <option selected>Seleccione un ZODES</option>
-                <option >ZODES NORTE BOLIVARENSE</option>
-                <option >ZODES DIQUE BOLIVARENSE</option>
-                <option >ZODES MONTES DE MAR&#205;A BOLIVARENSE</option>
-                <option >ZODES MOJANA BOLIVARENSE</option>
-                <option >ZODES ISLA DE MOMPOX BOLIVARENSE</option>
-                <option >ZODES LOBAS BOLIVARENSE</option>
-                <option >ZODES MAGDALENA MEDIO BOLIVARENSE</option>
+                <option value="45">ZODES NORTE BOLIVARENSE</option>
+                <option value="46">ZODES DIQUE BOLIVARENSE</option>
+                <option value="47">ZODES MONTES DE MAR&#205;A BOLIVARENSE</option>
+                <option value="48">ZODES MOJANA BOLIVARENSE</option>
+                <option value="49">ZODES ISLA DE MOMPOX BOLIVARENSE</option>
+                <option value="50">ZODES LOBAS BOLIVARENSE</option>
+                <option value="51">ZODES MAGDALENA MEDIO BOLIVARENSE</option>
                   </select>
               </div><!--terminacion de div segunda columna-->
           </div><!--terminacion de div class row-->
@@ -128,18 +128,17 @@
 
         <div id="divMayor">
         <div class="divTabla"><!-- Tablas de datos  --->
-          <h2 id ="tituloTabla">Datos</h2>
+          <h2 id ="tituloTabla" class="bg-info">Datos</h2>
 
             <table class="table table-bordered">
               <thead>
                 <th scope="col">Zodes</th>
                 <th scope="col">Municipio</th>
-                <th scope="col"> Instituci&#243n; </th>
+                <th scope="col">Nombre de Instituci&#243;n de Salud </th>
                 <th scope="col">Nombre Gerente</th>
                 <th scope="col">Teléfono</th>
-                <th scope="col">Fecha Inicial</th>
-                <th scope="col">Fecha Final</th>
-                <th scope="col">Informaci&#243n; </th>
+                <th scope="col">Fecha Vence</th>
+                <th scope="col">Dias Restantes</th>
               </tr>
              </thead>
             <tbody>
@@ -160,10 +159,10 @@
     </div>
 
 
-</div><!--  terminacion div container --->
+
+ <br><br><br><br><br>
 
 
-  
        <footer class="text-white bg-info">
          <!-- Copyright -->
          <div class="footer-copyright text-center py-3">Copyright© Ing. Juan José Sarabia caffroni
