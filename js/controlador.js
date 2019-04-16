@@ -24,57 +24,33 @@ $('#login').submit(function () {// vaidacion del login
 
 
 
-$('#registro_Estudiante').submit(function () {// registrar estudiante en la base de datos
 
-    // se toman los valores ingresados y se asignan a variables de javaScript
-    var identificacion = $("#identificacion").val();
-    var nombres = $("#nombres").val();
-    var apellidos = $("#apellidos").val();
-    var genero = $("#genero").val();
+function listarDatosFirmas() {
 
-      //se utiliza Json para enviar los datos a php
-         $.getJSON(localStorage["host"] + "php/registroe.php", {identificacion: identificacion, nombres: nombres, apellidos: apellidos, genero: genero,})
-            .done(function (respuestaServer) {
-
-                if (respuestaServer.validacion == "ok") {
-                	alert(respuestaServer.mensaje);
-                    window.location.href = 'inicio.html';
-
-                } else {
-
-                    alert(respuestaServer.mensaje);
-                }
-            })
-
-
-
-
-    return false;
-});
-
-
-function listarEstudiantes() {
-
-  $.getJSON(localStorage["host"] + "php/listarE.php")
+  $.getJSON(localStorage["host"] + "php/listarDatos.php")
             .done(function (respuestaServ) {
 
                 if (respuestaServ.validacion=="ok") {
 
-                	arreglo = respuestaServ.estudiante;
+                	arreglo = respuestaServ.datosMunicipios;
    					     cantidad = respuestaServ.n;
 
    					for (var i = 0; i < cantidad; i++) {
 
-                identificacion = arreglo[i].identificacion;
-                nombres = arreglo[i].nombres;
-                apellidos = arreglo[i].apellidos;
-                genero= arreglo[i].genero;
+                zode = arreglo[i].zode;
+                nombre = arreglo[i].nombre;
+                nombreI = arreglo[i].nombreI;
+                ngerente = arreglo[i].ngerente;
+                telefono = arreglo[i].telefono;
+                fechaFinal = arreglo[i].fechaFinal;
+                dias= arreglo[i].dias;
+
 
                                     var newTr= document.createElement("tr");
                                     var newTd1 = document.createElement("td");
                                     var newB1 = document.createElement("b");
                                     newB1.setAttribute("class","ui-table-cell-label");
-                                    newB1.innerHTML=identificacion;
+                                    newB1.innerHTML=zode;
 
                                     var newTd2 = document.createElement("td");
                                     var newB2 = document.createElement("b");
