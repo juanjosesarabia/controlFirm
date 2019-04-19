@@ -11,12 +11,12 @@
     <link rel="stylesheet" href="../css/estilo.css"> <!-- -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="shortcut icon" href="../img/controlfirm.png" />
-    </head>
+  </head>
 
   <body onload="listarDatosFirmas()">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="inicio.html">
+     <a class="navbar-brand" href="inicio.html">
          <img src="../img/controlfirm.png" width="80" height="50" class="d-inline-block align-top" alt="">
      </a>
 
@@ -56,8 +56,10 @@
       <p id="tituloPanel" class="bg-info">CONTROL DE FIRMAS  </p>
       <div class="contenidoPanel "><!--  Contenido del panel         ---><br>
           <div class="row ">
-            <div class="col-6">   <!--inicio de div primera columna-->
+            <div class="col-md-1 col-5">   <!--inicio de div primera columna-->
                 <label for="municipio" id="munici">Municipio: </label>
+            </div><!--terminacion de div segunda columna-->
+            <div class="col-md-5 col-7">   <!--inicio de div primera columna-->
                       <select id="municipio" class="custom-select"><!--  Select pata escoger municipio --->
                         <option selected>Seleccione un Municipio</option>
                         <option value="0">ACH&#205;</option>
@@ -108,8 +110,10 @@
                       </select>
             </div><!--terminacion de div primera columna-->
 
-          <div class="col-6">   <!--inicio de div segunda columna-->
-              <label for="zode" id="zod">o Zode: </label>
+          <div class="col-md-1 col-5">   <!--inicio de div segunda columna-->
+              <label for="zode" id="zod">  Zode: </label>
+          </div><!--terminacion de div segunda columna-->
+          <div class="col-md-5 col-7">
               <select id="zode" class="custom-select">
                 <option selected>Seleccione un ZODES</option>
                 <option value="45">ZODES NORTE BOLIVARENSE</option>
@@ -119,18 +123,18 @@
                 <option value="49">ZODES ISLA DE MOMPOX BOLIVARENSE</option>
                 <option value="50">ZODES LOBAS BOLIVARENSE</option>
                 <option value="51">ZODES MAGDALENA MEDIO BOLIVARENSE</option>
-                  </select>
-              </div><!--terminacion de div segunda columna-->
+              </select>
+          </div><!--terminacion de div segunda columna-->
           </div><!--terminacion de div class row-->
 
 
          <br><br>
 
-        <div id="divMayor">
+      <div id="divMayor">
         <div class="divTabla"><!-- Tablas de datos  --->
           <h2 id ="tituloTabla" class="bg-info">Datos</h2>
-
-            <table class="table table-bordered">
+           <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover table-condensed ">
               <thead>
                 <th scope="col">Zodes</th>
                 <th scope="col">Municipio</th>
@@ -141,7 +145,7 @@
                 <th scope="col">Dias Restantes</th>
               </tr>
              </thead>
-            <tbody>
+            <tbody id="tbody">
 
 
 
@@ -152,8 +156,8 @@
 
 
 
-
-        </div><!-- terminacion Tablas de datos  --->
+          </div><!--  terminacion Tablas de datos  --->
+        </div><!--  terminacion Tablas de datos  --->
         </div><!-- terminacion div raro  --->
       </div><!--  terminacion contenido panel --->
     </div>

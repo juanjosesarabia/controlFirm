@@ -32,7 +32,7 @@ function listarDatosFirmas() {
 
                 if (respuestaServ.validacion=="ok") {
 
-                	arreglo = respuestaServ.datosMunicipios;
+                 arreglo = respuestaServ.datos;
    					     cantidad = respuestaServ.n;
 
    					for (var i = 0; i < cantidad; i++) {
@@ -48,24 +48,39 @@ function listarDatosFirmas() {
 
                                     var newTr= document.createElement("tr");
                                     var newTd1 = document.createElement("td");
-                                    var newB1 = document.createElement("b");
+                                    var newB1 = document.createElement("span");
                                     newB1.setAttribute("class","ui-table-cell-label");
                                     newB1.innerHTML=zode;
 
                                     var newTd2 = document.createElement("td");
-                                    var newB2 = document.createElement("b");
+                                    var newB2 = document.createElement("span");
                                     newB2.setAttribute("class","ui-table-cell-label");
-                                    newB2.innerHTML=nombres;
+                                    newB2.innerHTML=nombre;
 
                                     var newTd3 = document.createElement("td");
-                                    var newB3 = document.createElement("b");
+                                    var newB3 = document.createElement("span");
                                     newB3.setAttribute("class","ui-table-cell-label");
-                                    newB3.innerHTML=apellidos;
+                                    newB3.innerHTML=nombreI;
 
                                     var newTd4 = document.createElement("td");
-                                    var newB4 = document.createElement("b");
+                                    var newB4 = document.createElement("span");
                                     newB4.setAttribute("class","ui-table-cell-label");
-                                    newB4.innerHTML=genero;
+                                    newB4.innerHTML=ngerente;
+
+                                    var newTd5 = document.createElement("td");
+                                    var newB5 = document.createElement("span");
+                                    newB5.setAttribute("class","ui-table-cell-label");
+                                    newB5.innerHTML=telefono;
+
+                                    var newTd6 = document.createElement("td");
+                                    var newB6 = document.createElement("span");
+                                    newB6.setAttribute("class","ui-table-cell-label");
+                                    newB6.innerHTML=fechaFinal;
+
+                                    var newTd7 = document.createElement("td");
+                                    var newB7 = document.createElement("span");
+                                    newB7.setAttribute("class","ui-table-cell-label");
+                                    newB7.innerHTML=dias;
 
                                     // añade los elementos creados y su contenido
                                     var currentDiv = document.getElementById("tbody");
@@ -81,6 +96,15 @@ function listarDatosFirmas() {
 
                                       newTr.appendChild(newTd4);
                                       newTd4.appendChild(newB4);
+
+                                      newTr.appendChild(newTd5);
+                                      newTd5.appendChild(newB5);
+
+                                      newTr.appendChild(newTd6);
+                                      newTd6.appendChild(newB6);
+
+                                      newTr.appendChild(newTd7);
+                                      newTd7.appendChild(newB7);
 
           }//fin del for
 

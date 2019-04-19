@@ -4,23 +4,25 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: text/html; charset=UTF-8");
 include("conexion.php");
 
-$conn = ConexionBaseDatos();
+$conne = ConexionBaseDatos();
 
 	$envio = array();
   $n;
 
 $resultados = array();
 
-//$actualizarFechaA = 'UPDATE firma SET fechaActual= curdate()';// actualizar fecha actual en la base de datos
-//$respuestaF = mysqli_query($conn, $actualizarFechaA) or die('Consulta fallida: ' . mysqli_error());
+$actualizarFechaA = 'UPDATE firma SET fechaActual= curdate()';// actualizar fecha actual en la base de datos
+$respuestaF = mysqli_query($conne, $actualizarFechaA) or die('Consulta fallida: ' . mysqli_error());
 ////
-//for ($i=0; $i <$n1 ; $i++) {/// actualizar dias restantes en la base de datos
-//	$diasRestantes = 'UPDATE firma SET dias= datediff(fechaFinal,fechaActual) where id_firma="'.$i.'"';
-//	$respuestaD = mysqli_query($conn, $diasRestantes) or die('Consulta fallida: ' . mysqli_error());
-//}
-
+$n1=50;
+for ($i=0; $i <$n1 ; $i++) {/// actualizar dias restantes en la base de datos
+	$diasRestantes = 'UPDATE firma SET dias= datediff(fechaFinal,fechaActual) where id_firma="'.$i.'"';
+	$respuestaD = mysqli_query($conne, $diasRestantes) or die('Consulta fallida: ' . mysqli_error());
+}
+mysqli_close($conne);
+$conn = ConexionBaseDatos();
 ///
-$query = 'SELECT zode, municipio.nombre,institucion.nombreI,ngerente, telefono, fechaFinal, dias FROM institucion, municipio, firma where municipio.id_institucion = institucion.id_institucion AND institucion.id_firma = firma.id_firma';
+$query = 'SELECT zode,nombre,nombreI,ngerente, telefono, fechaFinal, dias FROM institucion, municipio, firma where municipio.id_institucion = institucion.id_institucion AND institucion.id_firma = firma.id_firma';
 $respuesta = mysqli_query($conn, $query) or die('Consulta fallida: ' . mysqli_error());
 
 if (!($row = mysqli_fetch_array($respuesta, MYSQLI_ASSOC))) {
@@ -33,6 +35,7 @@ if (!($row = mysqli_fetch_array($respuesta, MYSQLI_ASSOC))) {
 	$resultados["validacion"] = "ok";
 	$resultados["n"] = $n;
 
+
 	while($row = mysqli_fetch_array($respuesta)) {
 
 					$zo = $row['zode'];
@@ -43,9 +46,8 @@ if (!($row = mysqli_fetch_array($respuesta, MYSQLI_ASSOC))) {
 					$fecha = $row['fechaFinal'];
 					$dia = $row['dias'];
 
-//$info = array("id_institucion"=>$id,"nombre" => $no,"ngerente" => $ge,"telefono" => $tel,"id_firma" => $fir);
-		$info = array("zode"=>$zo, "nombre" => $nomM, "nombreI" => $nomE,"ngerente" => $ngere,"telefono" => $tel,"fechaFinal" => $fecha,"dias" => $dia);
-		array_push($envio, $info);
+				$info = array("zode"=>$zo, "nombre" => $nomM,"nombreI" => $nomE,"ngerente" => $ngere,"telefono" => $tel,"fechaFinal" => $fecha, "dias" => $dia);
+    		array_push($envio, $info);
 
 				}
 
@@ -56,8 +58,7 @@ mysqli_free_result($respuesta);
 }
 mysqli_close($conn);
 
-$resultados["datosMunicipios"] = $envio;
-print_r ($resultados);
+$resultados["datos"] = $envio;
 /* convierte los resultados a formato json */
 $resultadosJson = json_encode($resultados);
 
