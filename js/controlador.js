@@ -81,6 +81,17 @@ function listarDatosFirmas() {
                                     var newB7 = document.createElement("span");
                                     newB7.setAttribute("class","ui-table-cell-label");
                                     newB7.innerHTML=dias;
+                                    var a = parseInt(dias);
+                                    if(a<15){
+                                      newB7.setAttribute("class","text-danger");
+                                      //newTd7.setAttribute("class","bg-danger");
+                                      //  $(newb7).css("background-color", "red");
+                                    }else{
+                                      newB7.setAttribute("class","text-success");
+                                    //  newB7.setAttribute("class","text-white");
+                                    //  newTd7.setAttribute("class","bg-success");
+                                    }
+
 
                                     // añade los elementos creados y su contenido
                                     var currentDiv = document.getElementById("tbody");
@@ -117,89 +128,99 @@ function listarDatosFirmas() {
 
                });
 
-
-
             };
 
-function listarDocentes() {// funcion para mostar todos los docentes registrados en la plataforma
+ function listarEntidades(){
 
-  $.getJSON(localStorage["host"] + "php/listarD.php")
-            .done(function (respuestaServ) {
+   $.getJSON(localStorage["host"] + "php/listarEntidades.php")
+             .done(function (respuestaServ) {
+                   var nombreI;
+                 if (respuestaServ.validacion=="ok") {
 
-                if (respuestaServ.validacion=="ok") {
+                  arreglo = respuestaServ.datos;
+                   cantidad = respuestaServ.n;
 
-                 arreglo = respuestaServ.docente;
-                  cantidad = respuestaServ.n;
+              for (var i = 0; i < cantidad; i++) {
+                 nombreI = arreglo[i].nombreI;
 
-             for (var i = 0; i < cantidad; i++) {
-
-                identificacion = arreglo[i].identificacion;
-                nombres = arreglo[i].nombres;
-                apellidos = arreglo[i].apellidos;
-                genero= arreglo[i].genero;
-
-                                    var newTr= document.createElement("tr");
-                                    var newTd1 = document.createElement("td");
-                                    var newB1 = document.createElement("b");
-                                    newB1.setAttribute("class","ui-table-cell-label");
-                                    newB1.innerHTML=identificacion;
-
-                                    var newTd2 = document.createElement("td");
-                                    var newB2 = document.createElement("b");
-                                    newB2.setAttribute("class","ui-table-cell-label");
-                                    newB2.innerHTML=nombres;
-
-                                    var newTd3 = document.createElement("td");
-                                    var newB3 = document.createElement("b");
-                                    newB3.setAttribute("class","ui-table-cell-label");
-                                    newB3.innerHTML=apellidos;
-
-                                    var newTd4 = document.createElement("td");
-                                    var newB4 = document.createElement("b");
-                                    newB4.setAttribute("class","ui-table-cell-label");
-                                    newB4.innerHTML=genero;
-
-                                    // añade los elementos creados y su contenido
-                                    var currentDiv = document.getElementById("tbody");
-                                      currentDiv.appendChild(newTr);
-                                      newTr.appendChild(newTd1);
-                                      newTd1.appendChild(newB1);
-
-                                      newTr.appendChild(newTd2);
-                                      newTd2.appendChild(newB2);
-
-                                      newTr.appendChild(newTd3);
-                                      newTd3.appendChild(newB3);
-
-                                      newTr.appendChild(newTd4);
-                                      newTd4.appendChild(newB4);
-
-          }//fin del for
+                                     var x = document.createElement("OPTION");
+                                     var t = document.createTextNode(nombreI);
+                                     //x.setAttribute("value", i);
+                                     x.appendChild(t);
+                                     document.getElementById("listaEse").appendChild(x);
 
 
-                }else{
 
-                  alert(respuestaServ.mensaje);
-                }
+           }//fin del for
 
 
-               });
+                 }else{
 
-            };
+                   alert(respuestaServ.mensaje);
+                 }
 
-$('#registroDocente').submit(function () {// registrar docente
+
+                });
+
+             };
+
+
+
+function validarEntidad(){// Validar la entidad
+  var datoEntidad = document.getElementById("entidad").value;
+
+    if (datoEntidad.length == 0) {
+       alert("Debes seleccionar una entidad");
+          } else {
+                    $.getJSON(localStorage["host"] + "php/buscarEntidad.php",{id:datoEntidad})
+                                         .done(function (respuestaServer) {
+                                             if (respuestaServer.validacion == "ok") {
+                                               doc = respuestaServer.entidad;
+                                               zode = document.getElementById("Zodes");
+                                               zode.value =doc[0].zode;
+                                               nom = document.getElementById("Municipio");
+                                               nom.value =doc[0].nombre;
+                                               ap = document.getElementById("nombreI");
+                                               ap.value =doc[0].nombreI;
+                                               geren = document.getElementById("nombreG");
+                                               geren.value =doc[0].ngerente;
+                                               tel = document.getElementById("telefono");
+                                               tel.value =doc[0].telefono;
+                                               fech = document.getElementById("firmaF");
+                                               fech.value =doc[0].fechaFinal;
+                                              document.getElementById("nombreG").removeAttribute("disabled");
+                                              document.getElementById("telefono").removeAttribute("disabled");
+                                              document.getElementById("firmaF").removeAttribute("disabled");
+                                              document.getElementById("botonGuardar").removeAttribute("disabled");
+
+
+                                             } else {
+                                                 alert(respuestaServer.mensaje);
+                                             }
+                                         })
+
+                    }
+             }
+
+
+
+
+
+function actualizarGerente(){//Actualizar gerente
               // se recolectan los datos ingresados al formulario
-            var identificacion = $("#identificacion").val();
-            var nombres = $("#nombres").val();
-            var apellidos = $("#apellidos").val();
-            var genero = $("#genero").val();
 
-             $.getJSON(localStorage["host"] + "php/registroD.php", {identificacion: identificacion, nombres: nombres, apellidos: apellidos, genero: genero,})
+
+            var nombreIs= $("#nombreI").val();
+            var nombreG = $("#nombreG").val();
+            var telefono = $("#telefono").val();
+            var firmaF = $("#firmaF").val();
+
+             $.getJSON(localStorage["host"] + "php/registroGerente.php", {nombreI: nombreIs, nombre: nombreG, telefono: telefono, firma: firmaF,})
                       .done(function (respuestaServer) {
 
                             if (respuestaServer.validacion == "ok") {
                             	alert(respuestaServer.mensaje);
-                              window.location.href = 'inicio.html';
+                              window.location.href = 'modificarG.html';
 
                             } else {
 
@@ -209,7 +230,10 @@ $('#registroDocente').submit(function () {// registrar docente
 
 
                 return false;
-            });
+            }
+
+
+/////////////////////////////////////////////////////////////////codigo sin utilizacion este proyecto
 
 $('#registroCurso').submit(function () {// registro de curso
               // Toma los valores del form de cursos

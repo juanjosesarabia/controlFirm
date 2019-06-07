@@ -55,3 +55,7 @@ body{/* propiedades del body */
 #divMayor{
 transform: translate(2.7%);
 }
+
+.dropdown-menu li {
+   text-align: center;
+}

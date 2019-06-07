@@ -8,7 +8,7 @@ function ConexionBaseDatos()
    $host = "localhost";
    $usuario = "root";
    $password = "";
-   $BaseDatos = "gobernacion";
+   $BaseDatos = "gobernacion2";
 
    $conn = new mysqli($host,$usuario,$password,$BaseDatos);
 

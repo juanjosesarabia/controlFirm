@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Control de Firmas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/flat-ui.min.css" >
+    <link rel="stylesheet" href="../css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../css/estilo.css"> <!-- -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../img/controlfirm.png" />
+  </head>
+
+  <body onload="listarEntidades()">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <a class="navbar-brand" href="inicio.html">
+         <img src="../img/controlfirm.png" width="80" height="50" class="d-inline-block align-top" alt="">
+     </a>
+
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button><!-- esta parte es para menu responsive-->
+        <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto text-center">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Gestionar Gerentes y Firma
+              </a>
+              <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item " href="inicio.html">Inicio</a>
+                <a class="dropdown-item " href="modificarG.html">Modificar Gerente y firma</a>
+              </div>
+            </li>
+        </ul>
+        <div class="">
+          <a type="btn" href="../index.html" class="btn btn-info btn-sm btn-block"> Cerrar Sesi&#243;n </a>
+        </div>
+        </div>
+    </nav><!-- terminacion del menu -->
+
+
+    <div class="panel" ><!--  Empieza toda la info de la resolucion o Circular         --->
+      <p id="tituloPanel" class="bg-info">CONTROL DE FIRMAS  </p>
+      <div class="contenidoPanel"><!--  Contenido del panel         ---><br>
+        <div class="container">
+          <div class="form-row">
+            <div class="col-md-2 col-2 form-group">   <!--inicio de div primera columna-->
+                <label for="municipio" id="munici">Buscar: </label>
+            </div><!--terminacion de div segunda columna-->
+            <div class=" col-md-7 col-7" class="login-form" >   <!--inicio de div primera columna-->
+                    <input class="form-control" type="text" id="entidad" list="listaEse" placeholder="Escoger Entidad para actualizar datos del Gerente">
+                    <datalist id="listaEse" class="">
+
+                    </datalist>
+            </div><!--terminacion de div primera columna-->
+
+
+          <div class="col-md-3 col-3">
+            <a type="btn" class="btn btn-info btn-d btn-block text-white" onclick="validarEntidad()">Seleccionar Entidad </a>
+          </div><!--terminacion de div segunda columna-->
+          </div><!--terminacion de div class row-->
+        </div><!--terminacion de div ccontainer-->
+
+         <br>
+
+      <div id="divMayor">
+        <div class="divTabla"><!-- Tablas de datos  --->
+          <h2 id ="tituloTabla" class="bg-info">Datos a Modificar</h2>
+          <form>
+            <div class="container">
+             <div class="form-row">
+            <div class="form-group col-6">
+              <label for="Zodes" class="font-weight-bold">Zodes</label>
+              <input type="text" class="form-control" id="Zodes" placeholder="Zodes" disabled><br>
+              <label for="municipio" class="font-weight-bold">Municipio</label>
+              <input type="text" class="form-control" id="Municipio" placeholder="Municipio" disabled><br>
+              <label for="nombreI" class="font-weight-bold">Nombre de Instituci&#243;n de Salud</label>
+              <input type="text" class="form-control" id="nombreI" placeholder="Nombre de Instituci&#243;n"disabled>
+            </div>
+            <div class="form-group col-6">
+              <label for="nombreG" class="font-weight-bold">Nombre del Gerente</label>
+              <input type="text" class="form-control" id="nombreG" placeholder="Nombre del Gerente"disabled required><br>
+              <label for="telefono" class="font-weight-bold">Teléfono</label>
+              <input type="text" class="form-control" id="telefono" placeholder="Teléfono"disabled required><br>
+              <label for="firmaF" class="font-weight-bold">Fecha Vencimiento firma</label>
+              <input type="date" class="form-control" id="firmaF"disabled required><br>
+              <div class="d-flex justify-content-end">
+                <a type="btn" class="btn btn-info d-flex  btn-md text-white " id="botonGuardar" onclick="actualizarGerente()" disabled> Guardar Datos </a>
+              </div>
+
+            </div>
+          </div><!--  terminacion div row  --->
+        </div><!--  terminacion div container  --->
+          </form>
+        </div><!--  terminacion Tablas de datos  --->
+        </div><!-- terminacion div raro  --->
+      </div><!--  terminacion contenido panel --->
+    </div>
+
+
+
+ <br><br><br><br><br>
+
+
+       <footer class="text-white bg-info">
+         <!-- Copyright -->
+         <div class="footer-copyright text-center py-3">Copyright© Ing. Juan José Sarabia caffroni
+         </div>
+       </footer>
+
+
+
+
+       <!-- Conexion con Jquery -->
+     <script src="../js/jquery.min.js"> </script>
+     <script src="../js/jquery.js"> </script>
+     <!-- Conexion con Bootstrap -->
+     <script src="../js/bootstrap.min.js"> </script>
+     <script src="../js/flat-ui.min.js"></script>
+
+     <script src="../js/video.js"></script>
+     <!-- Conexion con funciones creadas en el JavaScript -->
+     <script src="../js/controlador.js"></script>
+
+
+
+
+  </body>
+</html>

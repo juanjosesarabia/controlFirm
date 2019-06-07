@@ -14,6 +14,8 @@ $resultados = array();
 $actualizarFechaA = 'UPDATE firma SET fechaActual= curdate()';// actualizar fecha actual en la base de datos
 $respuestaF = mysqli_query($conne, $actualizarFechaA) or die('Consulta fallida: ' . mysqli_error());
 ////
+
+
 $n1=50;
 for ($i=0; $i <$n1 ; $i++) {/// actualizar dias restantes en la base de datos
 	$diasRestantes = 'UPDATE firma SET dias= datediff(fechaFinal,fechaActual) where id_firma="'.$i.'"';
@@ -30,13 +32,12 @@ if (!($row = mysqli_fetch_array($respuesta, MYSQLI_ASSOC))) {
      $resultados["mensaje"] = "No se pueden cargar los datos";
 
 } else {
-
 	$n = mysqli_num_rows($respuesta);// retorna un numero de filas de la bd
 	$resultados["validacion"] = "ok";
 	$resultados["n"] = $n;
 
 
-	while($row = mysqli_fetch_array($respuesta)) {
+	while( $row = mysqli_fetch_array($respuesta)){
 
 					$zo = $row['zode'];
 					$nomM = $row['nombre'];
@@ -52,9 +53,9 @@ if (!($row = mysqli_fetch_array($respuesta, MYSQLI_ASSOC))) {
 				}
 
 
+
 //Liberas la memoria del resultado
 mysqli_free_result($respuesta);
-
 }
 mysqli_close($conn);
 

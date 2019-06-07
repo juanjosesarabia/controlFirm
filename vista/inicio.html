@@ -23,26 +23,17 @@
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
      </button><!-- esta parte es para menu responsive-->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto text-center">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Gestionar Gerentes
+                Gestionar Gerentes y Firma
               </a>
               <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="consultarE.html">Mostrar Gerentes</a>
-                <a class="dropdown-item" href="modificarE.html">Modificar Gerente</a>
+                <a class="dropdown-item " href="modificarG.html">Modificar Gerente y firma</a>
               </div>
             </li>
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Gestionar Firmas
-            </a>
-            <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="consultarD.html">Mostrar Firmas</a>
-              <a class="dropdown-item" href="modificarD.html">Modificar Firma</a>
-            </div>
-          </li>
+
         </ul>
         <div class="">
           <a type="btn" href="../index.html" class="btn btn-info btn-sm btn-block"> Cerrar Sesi&#243;n </a>
@@ -54,8 +45,9 @@
 
     <div class="panel" ><!--  Empieza toda la info de la resolucion o Circular         --->
       <p id="tituloPanel" class="bg-info">CONTROL DE FIRMAS  </p>
-      <div class="contenidoPanel "><!--  Contenido del panel         ---><br>
-          <div class="row ">
+      <div class="contenidoPanel"><!--  Contenido del panel         ---><br>
+        <div class="container">
+          <div class=" form-row ">
             <div class="col-md-1 col-5">   <!--inicio de div primera columna-->
                 <label for="municipio" id="munici">Municipio: </label>
             </div><!--terminacion de div segunda columna-->
@@ -126,7 +118,7 @@
               </select>
           </div><!--terminacion de div segunda columna-->
           </div><!--terminacion de div class row-->
-
+        </div><!--terminacion de div ccontainer-->
 
          <br><br>
 
@@ -142,7 +134,7 @@
                 <th scope="col">Nombre Gerente </th>
                 <th scope="col">Teléfono </th>
                 <th scope="col">Fecha final</th>
-                <th scope="col">Dias Restantes</th>
+                <th scope="col">Días Restantes</th>
               </tr>
              </thead>
             <tbody id="tbody">
