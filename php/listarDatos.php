@@ -4,10 +4,14 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: text/html; charset=UTF-8");
 include("conexion.php");
 
+SESSION_START();
+
 $conne = ConexionBaseDatos();
 
 	$envio = array();
   $n;
+	$info;
+
 
 $resultados = array();
 
@@ -35,6 +39,11 @@ if (!($row = mysqli_fetch_array($respuesta, MYSQLI_ASSOC))) {
 	$n = mysqli_num_rows($respuesta);// retorna un numero de filas de la bd
 	$resultados["validacion"] = "ok";
 	$resultados["n"] = $n;
+	   $algo = $_SESSION["nombre"];
+if($algo!=null){
+	$resultados["session"] =$algo ;
+}
+
 
 
 	while( $row = mysqli_fetch_array($respuesta)){

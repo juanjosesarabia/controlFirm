@@ -8,7 +8,7 @@ $conn = ConexionBaseDatos();
 
 	$envio = array();
   $n;
-
+	
 $resultados = array();
 
 ///
@@ -23,6 +23,7 @@ if (!($row = mysqli_fetch_array($respuesta, MYSQLI_ASSOC))) {
 	$n = mysqli_num_rows($respuesta);// retorna un numero de filas de la bd
 	$resultados["validacion"] = "ok";
 	$resultados["n"] = $n;
+
 
 
 	while( $row = mysqli_fetch_array($respuesta)){

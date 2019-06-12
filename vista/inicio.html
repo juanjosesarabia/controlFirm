@@ -35,10 +35,49 @@
             </li>
 
         </ul>
-        <div class="">
-          <a type="btn" href="../index.html" class="btn btn-info btn-sm btn-block"> Cerrar Sesi&#243;n </a>
-        </div>
-        </div>
+
+          <!-- Notificaciones-->
+          <a href="" class="btn-sm" data-toggle="modal" data-target="#exampleModal" >
+              <ul class="list-group" class="py-2">
+                <li class="list-group-item d-flex justify-content-between align-items-center" class="py-auto" >
+                   <img class="mr-4" src="../img/iconoInactivo.png" alt="iconoInactivo" id="iconoInactivo"  width="18" height="16" >
+                   <img class="mr-4" src="../img/iconoActivo.png" alt="iconoActivo"  id="iconoActivo" width="22" height="20" style="display:none;" >
+                  <span class="badge badge-info badge-pill" id="notificacion">0</span>
+                </li>
+              </ul>
+          </a><br>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+            <div class="modal-dialog" role="document" >
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="exampleModalLabel">Próximos a Vencer</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div  id="cuerpoModal" >
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- usuario-->
+        <div class="btn-group">
+          <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="nombreUsuario">
+            Nombre
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="../index.html" class="btn btn-info btn-sm btn-block"> Cerrar Sesi&#243;n </a>
+          </div>
+       </div>
+
     </nav><!-- terminacion del menu -->
 
 
@@ -161,7 +200,7 @@
 
        <footer class="text-white bg-info">
          <!-- Copyright -->
-         <div class="footer-copyright text-center py-3">Copyright© Ing. Juan José Sarabia caffroni
+         <div class="footer-copyright text-center py-3">Copyright© Ing. Juan José Sarabia Caffroni
          </div>
        </footer>
 

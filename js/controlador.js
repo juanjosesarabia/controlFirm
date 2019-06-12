@@ -1,5 +1,6 @@
 
-localStorage["host"] = "http://192.168.1.54/controlFirm/"
+localStorage["host"] = "http://192.168.0.16/controlFirm/"
+var nombreUsuario;
 
 $('#login').submit(function () {// vaidacion del login
 
@@ -11,6 +12,9 @@ $('#login').submit(function () {// vaidacion del login
           .done(function (respuestaServer) {
 
               if (respuestaServer.validacion == "ok") {
+                    arreglo = respuestaServer.datos;
+
+
 
                   window.location.href = 'vista/inicio.html';
 
@@ -22,7 +26,7 @@ $('#login').submit(function () {// vaidacion del login
   return false;
 });
 
-
+var vencer=0;
 
 
 function listarDatosFirmas() {
@@ -34,6 +38,11 @@ function listarDatosFirmas() {
 
                  arreglo = respuestaServ.datos;
    					     cantidad = respuestaServ.n;
+                 nombreUsuario = respuestaServ.session;
+                // document.getElementById('nombreUsuario').innerHTML=nombreUsuario ;
+
+
+
 
    					for (var i = 0; i < cantidad; i++) {
 
@@ -82,10 +91,26 @@ function listarDatosFirmas() {
                                     newB7.setAttribute("class","ui-table-cell-label");
                                     newB7.innerHTML=dias;
                                     var a = parseInt(dias);
-                                    if(a<15){
+
+                                    if(a<=15){
                                       newB7.setAttribute("class","text-danger");
                                       //newTd7.setAttribute("class","bg-danger");
                                       //  $(newb7).css("background-color", "red");
+                                      vencer++;
+                                      document.getElementById("notificacion").innerHTML=vencer;
+                                      $('#iconoInactivo').hide();
+                                      $('#iconoActivo').show();
+
+                                      //prueba para modals
+                                      var p, completo;
+                                      p=ngerente;
+                                      var a;
+                                      a=nombre;
+                                      completo = nombre.bold()+" : "+ngerente;
+                                      var algo = document.createElement("p");
+                                      algo.innerHTML=completo;
+                                      $( "#cuerpoModal" ).append(algo);
+
                                     }else{
                                       newB7.setAttribute("class","text-success");
                                     //  newB7.setAttribute("class","text-white");
@@ -117,6 +142,8 @@ function listarDatosFirmas() {
                                       newTr.appendChild(newTd7);
                                       newTd7.appendChild(newB7);
 
+
+
           }//fin del for
 
 
@@ -131,6 +158,8 @@ function listarDatosFirmas() {
             };
 
  function listarEntidades(){
+
+
 
    $.getJSON(localStorage["host"] + "php/listarEntidades.php")
              .done(function (respuestaServ) {
