@@ -1,9 +1,9 @@
 <?php
-
+session_start();
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: text/html; charset=UTF-8");
 include("conexion.php");
-SESSION_START();
+
 
 $conn = ConexionBaseDatos();
 $usuario = $_GET['usuario'];
@@ -32,6 +32,7 @@ if (!($row = mysqli_fetch_array($result, MYSQLI_ASSOC))) {
       mysqli_data_seek($result, 0);
       $row = mysqli_fetch_row($result);
       $_SESSION["nombre"]= $row[0];
+
 
           //Liberas la memoria del resultado
     mysqli_free_result($result);

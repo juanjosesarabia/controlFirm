@@ -1,10 +1,10 @@
 <?php
-
+session_start();
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: text/html; charset=UTF-8");
 include("conexion.php");
 
-SESSION_START();
+
 
 $conne = ConexionBaseDatos();
 
@@ -21,7 +21,7 @@ $respuestaF = mysqli_query($conne, $actualizarFechaA) or die('Consulta fallida: 
 
 
 $n1=50;
-for ($i=0; $i <$n1 ; $i++) {/// actualizar dias restantes en la base de datos
+for ($i=0; $i <=$n1 ; $i++) {/// actualizar dias restantes en la base de datos
 	$diasRestantes = 'UPDATE firma SET dias= datediff(fechaFinal,fechaActual) where id_firma="'.$i.'"';
 	$respuestaD = mysqli_query($conne, $diasRestantes) or die('Consulta fallida: ' . mysqli_error());
 }
@@ -39,13 +39,13 @@ if (!($row = mysqli_fetch_array($respuesta, MYSQLI_ASSOC))) {
 	$n = mysqli_num_rows($respuesta);// retorna un numero de filas de la bd
 	$resultados["validacion"] = "ok";
 	$resultados["n"] = $n;
-	   $algo = $_SESSION["nombre"];
-if($algo!=null){
-	$resultados["session"] =$algo ;
-}
+
+	if (isset($_SESSION['nombre'])){
+		$resultados["sesion"] = $_SESSION["nombre"];
+	}
 
 
-
+  mysqli_data_seek($respuesta, 0);// esta parte para ver si carga todo
 	while( $row = mysqli_fetch_array($respuesta)){
 
 					$zo = $row['zode'];
