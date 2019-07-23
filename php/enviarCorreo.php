@@ -32,17 +32,52 @@ if (!($row = mysqli_fetch_array($result, MYSQLI_ASSOC))) {
   				}
 
 
+$mensaje2 = implode(";", $envio);//print_r( $mensaje2);
+
+
+// Always set content-type when sending HTML email
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+// More headers
+$headers .= 'From: <info@controldefirmas.com>' . "\r\n";
+
+
+for($i=0; $i<count($envio); $i++){
+$mensaje3= $mensaje3. "<li>$envio[$i]</li>";
+ }
+
+// Cuerpo del mensaje
+$mensaje4 = "
+<html>
+<head>
+<title>Próximas Firmas a vencer </title>
+</head>
+<body>
+<div style='display: flex;'>
+<h1>Próximas firmas a vencer</h1>
+</div>
+
+<ol>
+.$mensaje3.
+</ol>
+
+</body>
+</html>
+";
+
+
+// Enviar correo
+mail("jujosaca2013@hotmail.com,erodriguez@bolivar.gov.co","PROXIMAS FIRMAS A VENCER ",$mensaje4,$headers);
+//mail("jujosaca2013@hotmail.com","PROXIMAS FIRMAS A VENCER ","mensajeprueba");
+
+
+
  //Liberas el resultado
 mysqli_free_result($result);
 }
 mysqli_close($conn);
 
-$mensaje2 = implode(";", $envio);
-//print_r( $mensaje2);
-
-
-
-//mail("jujosaca2013@hotmail.com","PROXIMAS FIRMAS A VENCER ",$mensaje2 );
 
 
 //$resultados["entidad"] = $envio;

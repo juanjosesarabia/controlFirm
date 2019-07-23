@@ -1,5 +1,5 @@
 $(document).ready(function(){
-setInterval(function(){enviarCorreo(); }, 20000);
+setInterval(function(){enviarCorreo(); }, 60000);
     });
 
 localStorage["host"] = "http://192.168.1.54/controlFirm/"
