@@ -20,7 +20,7 @@ $respuestaF = mysqli_query($conne, $actualizarFechaA) or die('Consulta fallida: 
 ////
 
 
-$n1=50;
+$n1=51;
 for ($i=0; $i <=$n1 ; $i++) {/// actualizar dias restantes en la base de datos
 	$diasRestantes = 'UPDATE firma SET dias= datediff(fechaFinal,fechaActual) where id_firma="'.$i.'"';
 	$respuestaD = mysqli_query($conne, $diasRestantes) or die('Consulta fallida: ' . mysqli_error());

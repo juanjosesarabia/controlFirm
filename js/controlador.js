@@ -1,5 +1,5 @@
 $(document).ready(function(){
-setInterval(function(){enviarCorreo(); }, 60000);
+
     });
 
 localStorage["host"] = "http://192.168.1.54/controlFirm/"
@@ -170,6 +170,12 @@ function listarDatosFirmas() {
                  if (respuestaServ.validacion=="ok") {
                       arreglo = respuestaServ.datos;
                       cantidad = respuestaServ.n;
+					  
+					    nombreUsuario = respuestaServ.sesion;
+
+                 if (nombreUsuario!==undefined) {
+                     document.getElementById('nombreUsuario').innerHTML=nombreUsuario ;
+                  }
 
                       for (var i = 0; i < cantidad; i++) {
                          nombreI = arreglo[i].nombreI;
@@ -259,4 +265,10 @@ function enviarCorreo(){
                                alert(respuestaServer.mensaje);
                            }
                        })
+}
+
+function extraerPdf(){
+  window.open(localStorage["host"] + "php/imprimirPDF.php","Nueva ventana");
+
+  
 }
